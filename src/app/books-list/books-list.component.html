@@ -1,0 +1,65 @@
+<div class="controls-wrapper">
+    <div class="search">
+        <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Enter a book title"
+        (keyup)="applyFilter($event.target.value)"
+        >
+    </div>
+    <div class="button">
+        <button class="button-add" (click)="addNewBook()">Add new book</button>
+    </div>
+</div>
+<div class="books-list">
+    <table 
+    mat-table 
+    [dataSource]="dataSource" 
+    matSort 
+    class="mat-elevation-z8"
+    (matSortChange)="sortData($event)"
+    >
+        <!-- Checkbox  -->
+        <ng-container matColumnDef="checkbox">
+            <th mat-header-cell *matHeaderCellDef class="table-header"></th>
+            <td mat-cell *matCellDef="let element">
+                <input class="checkbox-item" type="checkbox" (change)="selectRowsToChange($event)">
+            </td>
+        </ng-container>
+
+        <!-- Book number  -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header"> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Book title -->
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header"> Book title </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <!-- Page count -->
+        <ng-container matColumnDef="pageCount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header"> Page count</th>
+            <td mat-cell *matCellDef="let element"> {{element.pageCount}} </td>
+        </ng-container>
+
+        <!-- Publish date -->
+        <ng-container matColumnDef="publishDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header"> Publish date</th>
+            <td mat-cell *matCellDef="let element"> {{element.publishDate | date: 'dd.MM.yyyy'}} </td>
+        </ng-container>
+
+        <!-- Edit -->
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef class="table-header"></th>
+            <td mat-cell *matCellDef="let element">
+                <img src="../../assets/img/edit.svg" class="edit-icon" alt="edit-icon" (click)="editBook(element)">
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

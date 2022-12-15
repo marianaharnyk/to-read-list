@@ -1,0 +1,86 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.controls-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.search{
+    flex: 2;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.search-input{
+    width: 70%;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 2px solid var(--accent-color);
+    display: block;
+    margin: auto;
+    font-family: var(--secondary-font);
+    font-size: 18px;
+}
+
+.search-input:focus{
+    outline: none;
+}
+
+.button{
+    flex: 1;
+}
+
+.button-add{
+    display: block;
+    margin: auto;   
+    padding: 10px 10px;
+    border: none;
+    background-color: var(--accent-color);
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    color: var(--main-dark-color);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button-add:hover{
+    background-color: var(--main-dark-color);   
+    color: var(--main-light-color);
+}
+
+.selected-book{
+    background-color: var(--background-row-color);
+}
+
+.edit-icon{
+    cursor: pointer;
+}
+
+.table-header{
+    font-family: var(--primary-font);
+    font-size: 14px;
+    color: var(--main-dark-color);
+}
+
+td{
+    font-family: var(--secondary-font);
+    font-size: 13px;
+    color: var(--main-dark-color);
+}
+
+::ng-deep .book-matDialog-styles .mat-dialog-container{
+    margin: auto;
+    min-width: 375px;
+    padding: 40px 45px 20px 45px;
+    position: relative;
+    max-height: 100vh;
+}

@@ -1,0 +1,28 @@
+.header-container {
+    background-image: url(../assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 37% 50%;
+    min-height: 200px;
+}
+
+.header-title {
+    color: var(--main-dark-color);
+    font-family: var(--primary-font);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 52px;
+    letter-spacing: 9px;
+    text-align: center;
+    padding: 62px 0 30px 0;
+}
+
+.line {
+    height: 1px;
+    width: 70%;
+    line-height: 27.2px;
+    position: relative;
+    background-color: var(--accent-color);
+    border: none;
+    margin: 0 auto;
+}

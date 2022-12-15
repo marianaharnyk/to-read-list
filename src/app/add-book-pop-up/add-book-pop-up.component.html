@@ -1,0 +1,37 @@
+<div class="add-book-container">
+    <form [formGroup]="addBookForm">
+        <h2 *ngIf="!data.edit" class="pop-up-title">Add new book</h2>
+        <h2 *ngIf="data.edit" class="pop-up-title">Edit book</h2>
+
+        <div>
+            <div class="book-item">
+                <label for="title">Title</label>
+                <textarea formControlName="title" name="title" id="title" placeholder="Enter a book title"></textarea>
+            </div>
+            <div class="book-item">
+                <label for="description">Description</label>
+                <textarea formControlName="description" name="description" id="description" placeholder="Enter a book description"></textarea>
+            </div>
+            <div class="book-item">
+                <label for="excerpt">Excerpt</label>
+                <textarea formControlName="excerpt" name="excerpt" id="excerpt" placeholder="Enter a book excerpt"></textarea>
+            </div>
+            <div class="book-details">
+                <div class="book-details-item">
+                    <label for="page-count">Page count</label>
+                    <textarea formControlName="pageCount" name="page-count" id="page-count" placeholder="Enter a page count"></textarea>
+                </div>
+                <div class="book-details-item">
+                    <label for="publish-date">Publish date</label>
+                    <textarea formControlName="publishDate" name="publish-date" id="publish-date" placeholder="Enter a publishdate"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="button-wrapper">
+        <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+        <button *ngIf="!data.edit" [disabled]="!addBookForm.valid" class="add-btn" (click)="addNewBook()">Add</button>
+        <button *ngIf="data.edit" [disabled]="!addBookForm.valid" class="add-btn" (click)="saveChanges()">Save changes</button>
+    </div>
+</div>
