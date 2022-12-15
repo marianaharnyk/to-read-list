@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
 
+You must have the following versions to work correctly: Angular CLI: 9.1.15 Node: 14.7.6 npm: 6.14.15
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

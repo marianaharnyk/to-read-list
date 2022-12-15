@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AddBookPopUpComponent} from '../add-book-pop-up/add-book-pop-up.component'
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
+import * as html2pdf from 'html2pdf.js'
 
 @Component({
   selector: 'app-books-list',
@@ -111,6 +112,21 @@ export class BooksListComponent implements OnInit {
       dialogConfig.data.book = {};
     }
     this.dialog.open(AddBookPopUpComponent, dialogConfig);
+  }
+
+  public downloadAsPDF() {
+    const options = {
+      name: 'toreadlist.pdf',
+      image: { type: 'jpeg' },
+      html2pdf: {},
+      jsPDF: { origin: 'landscape'}
+    }
+
+    const element: Element = document.querySelector('#pdfTable');
+    html2pdf()
+      .from(element)
+      .set(options)
+      .save()
   }
 
   ngOnDestroy(): void {

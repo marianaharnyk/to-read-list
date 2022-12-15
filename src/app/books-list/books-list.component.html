@@ -8,10 +8,13 @@
         >
     </div>
     <div class="button">
-        <button class="button-add" (click)="addNewBook()">Add new book</button>
+        <button class="button-item" (click)="addNewBook()">Add new book</button>
+    </div>
+    <div class="button">
+        <button class="button-item" (click)="downloadAsPDF()">Download</button>
     </div>
 </div>
-<div class="books-list">
+<div class="books-list" id="pdfTable">
     <table 
     mat-table 
     [dataSource]="dataSource" 

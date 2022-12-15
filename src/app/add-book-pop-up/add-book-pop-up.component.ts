@@ -5,7 +5,6 @@ import { Book } from '../models/book.interface';
 import { DatePipe } from '@angular/common';
 import { Subject } from 'rxjs';
 
-
 @Component({
   selector: 'app-add-book-pop-up',
   templateUrl: './add-book-pop-up.component.html',

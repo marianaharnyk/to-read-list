@@ -37,9 +37,10 @@ th.mat-sort-header-sorted {
 
 .button{
     flex: 1;
+    margin: 0 10px;
 }
 
-.button-add{
+.button-item{
     display: block;
     margin: auto;   
     padding: 10px 10px;
@@ -50,9 +51,10 @@ th.mat-sort-header-sorted {
     color: var(--main-dark-color);
     transition: all 0.5s;
     cursor: pointer;
+    width: 100%;
 }
 
-.button-add:hover{
+.button-item:hover{
     background-color: var(--main-dark-color);   
     color: var(--main-light-color);
 }
